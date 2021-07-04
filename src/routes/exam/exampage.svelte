@@ -26,6 +26,8 @@ function selectSubject(event){
   let sub = event.detail
   activeQuestion = sub
 }
+
+
 </script>
 
 {#await getQuestionData() then questionData}
@@ -34,7 +36,7 @@ function selectSubject(event){
         <div class="grid-container">
           <div class="q-bar"> <Qbar /> </div>
           <div class="subject"><Subject activeQuestion={activeQuestion} on:subject={selectSubject} /></div>
-          <div class="q-box"> <Question question={que.question} options= 'options' correctAnswer={que.answer} /> </div>
+          <div class="q-box"> <Question question={que}  /> </div>
           <div class="q-table"> <Table activeQuestion={activeQuestion} on:notify={selectQuestion} /> </div>  
           <div class="selection-buttons"> <Buttons on:message={handleMessage} /> </div>
         </div>

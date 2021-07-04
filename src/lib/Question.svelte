@@ -1,35 +1,31 @@
 <script>
 export let question 
-export let options
-export let correctAnswer
-</script>
 
+
+</script>
 
 <div class="block">
     <h3>
-         {question}
+         {question.question}
     </h3>
 </div>
 <div class="content is-normal">
     <ol type="none" >
-    <li>
-        <input type="radio" name="options">
-        {options}
-    </li>
-    <li>
-        <input type="radio" name="options">
-        {options}
-    </li>
-    <li>
-        <input type="radio" name="options">
-        {options}
-    </li>
-    <li>
-        <input type="radio" name="options">
-        {correctAnswer}
-    </li>
+        {#each question.options as option}    
+            <li>
+                <input 
+                type="radio" 
+                name="options"
+                on:click={() => { question.selected = option } }
+                checked = { (question.selected === option)? true : false }
+                >
 
+                {option}
+
+            </li>
+        {/each}    
   </ol>
+  {question.selected}
 </div>
 
 
