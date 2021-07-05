@@ -1,6 +1,17 @@
 <script>
 export let question 
+export let questionNoArray
+export let activeQuestion
 
+ import { createEventDispatcher } from 'svelte'
+
+ const dispatch = createEventDispatcher()
+
+ function answered(){
+      dispatch('answer',{
+         text:'answer'         
+      })
+   }
 
 </script>
 
@@ -16,8 +27,11 @@ export let question
                 <input 
                 type="radio" 
                 name="options"
-                on:click={() => { question.selected = option } }
-                checked = { (question.selected === option)? true : false }
+                on:click={() => {
+                     question.selected = option  
+                     answered()
+                     } }
+                checked = { (question.selected === option && questionNoArray[activeQuestion - 1].answered )? true : false }
                 >
 
                 {option}

@@ -34,6 +34,8 @@ export async function getQuestionData() {
       answer: obj.correct_answer,
       options: optionsList,
       selected: "",
+      seen: false,
+      marked: false,
     }
 
     return qObj

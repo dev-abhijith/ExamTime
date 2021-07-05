@@ -8,24 +8,62 @@ import {getQuestionData} from '../../api/getQuestions'
 
 let activeQuestion = 1
 
-function handleMessage(event){
-  if(event.detail.text === 'next'){
-    if(activeQuestion < 10){activeQuestion++}else{activeQuestion = 1}
+let questionNoArray=[]
+
+for(let i = 1; i <= 10 ; i++){
+    questionNoArray.push({
+        index: i,
+        seen: false,
+        marked: false,
+        answered: false
+    })
+}
+questionNoArray[0].seen = true
+
+function handleAction(event){
+
+  if(event.detail.text === 'next'){   
+
+    questionNoArray[activeQuestion - 1].seen = true
+
+    if(activeQuestion < 10){
+
+      activeQuestion++     
+
+    }else{activeQuestion = 1}
+
   }else if(event.detail.text === 'review'){
-    
-  }else if(event.detail.text === 'clear'){
+
+    questionNoArray[activeQuestion - 1].marked = true
+
+  }else if (event.detail.text === 'clear'){
+
+    questionNoArray[activeQuestion - 1].marked = false
+
+    questionNoArray[activeQuestion - 1].answered = false
 
   }
 }
+
+
 function selectQuestion(event){
   let n = event.detail
   activeQuestion = n
+  questionNoArray[activeQuestion - 1].seen = true
 }
 
 function selectSubject(event){
   let sub = event.detail
+  questionNoArray[sub - 1].seen = true
   activeQuestion = sub
 }
+
+function selectedOption(event){
+  if(event.detail.text === 'answer'){
+  questionNoArray[activeQuestion - 1].answered = true
+  }
+}
+
 
 
 </script>
@@ -35,22 +73,22 @@ function selectSubject(event){
 			{#if que.sno === activeQuestion}
         <div class="grid-container">
           <div class="q-bar"> <Qbar /> </div>
-          <div class="subject"><Subject activeQuestion={activeQuestion} on:subject={selectSubject} /></div>
-          <div class="q-box"> <Question question={que}  /> </div>
-          <div class="q-table"> <Table activeQuestion={activeQuestion} on:notify={selectQuestion} /> </div>  
-          <div class="selection-buttons"> <Buttons on:message={handleMessage} /> </div>
+          <div class="subject"><Subject activeQuestion = {activeQuestion} on:subject = {selectSubject} /></div>
+          <div class="q-box"> <Question question = {que} {questionNoArray} activeQuestion = {activeQuestion} on:answer = {selectedOption} /> </div>
+          <div class="q-table"> <Table activeQuestion = {activeQuestion} questionNoArray = {questionNoArray} on:notify = {selectQuestion} /> </div>  
+          <div class="selection-buttons"> <Buttons on:message={handleAction} question = {que}  /> </div>
         </div>
 			{/if}
 	{/each}
 {/await}
 
+
+
 <style>
 .q-bar{
   grid-column: 1/  11;
-  grid-row: 1;
-  
+  grid-row: 1; 
 }
-
 .subject{
   grid-column: 1/ 8;
   grid-row: 2;
@@ -69,14 +107,12 @@ function selectSubject(event){
   grid-row: 2/ 11;
   width: 25vw;
 }
-
 .grid-container{
   display: grid;
   grid-template-columns: auto auto auto auto auto auto auto auto auto auto;  
   grid-template-rows:    auto auto auto auto auto auto auto auto auto auto;
   width: 100vw;
-  height: 100vh;
-                        
+  height: 100vh;                        
 }
 
 </style>
