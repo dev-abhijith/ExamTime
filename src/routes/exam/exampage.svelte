@@ -4,13 +4,14 @@ import Question from '$lib/Question.svelte'
 import Buttons from '$lib/Buttons.svelte'
 import Table from '$lib/Table.svelte'
 import Qbar from '$lib/Qbar.svelte'
+import Submit from '$lib/Submit.svelte'
 import {getQuestionData} from '../../api/getQuestions'
 
 let activeQuestion = 1
 
 let questionNoArray=[]
 
-for(let i = 1; i <= 10 ; i++){
+for(let i = 1; i <= 100 ; i++){
     questionNoArray.push({
         index: i,
         seen: false,
@@ -77,6 +78,7 @@ function selectedOption(event){
           <div class="q-box"> <Question question = {que} {questionNoArray} activeQuestion = {activeQuestion} on:answer = {selectedOption} /> </div>
           <div class="q-table"> <Table activeQuestion = {activeQuestion} questionNoArray = {questionNoArray} on:notify = {selectQuestion} /> </div>  
           <div class="selection-buttons"> <Buttons on:message={handleAction} question = {que}  /> </div>
+          <div class="submission-button"> <Submit /> </div>
         </div>
 			{/if}
 	{/each}
@@ -104,8 +106,13 @@ function selectedOption(event){
 }
 .q-table{
   grid-column:8/ 11;
-  grid-row: 2/ 11;
+  grid-row: 2/ 10;
   width: 25vw;
+  background-color: #dbe1e6;
+}
+.submission-button{
+  grid-column:8/ 11;
+  grid-row: 10/ 11;
 }
 .grid-container{
   display: grid;
