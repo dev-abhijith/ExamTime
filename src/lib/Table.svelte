@@ -19,7 +19,6 @@ const dispatch = createEventDispatcher()
                  (activeQuestion === question.index) ? 'selected'
                  : (question.answered && question.marked) ? 'answeredandmarked'
                  : (question.answered) ? 'answered'
-                 : (question.marked && question.seen) ? 'seenandmarked'
                  :(question.marked) ? 'marked'
                  : (question.seen) ? 'seen'
                  : ''
@@ -49,28 +48,25 @@ const dispatch = createEventDispatcher()
     #selected{
         width: 4em;
         font-weight: bolder;        
-        background-color: #6e2536;
-        color: white;
+        background-color: #d1d8de;
+        color: black;
     }
-    #seenandmarked{
-        background-color: rgb(221, 204, 204);
-        color: white;
-    }
+    
     #seen{
-        background-color: red;
+        background-color: #c93700;
         color: white;
     }
     #marked{
-        background-color: blue;
-        color: white;
+        background-color: #82ffff;
+        color: black;
     }
     #answered{
-        background-color: green;
+        background-color: #014c25;
         color: white;
     }
     #answeredandmarked{
-        background-color: blueviolet;
-        color: white;
+        background-color: #edff55;
+        color: black;
     }
 
    
