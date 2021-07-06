@@ -23,37 +23,56 @@
    }   
 </script>
 
-<nav class="navbar">
-   <div class="nav-start">
-      <button 
-         class="button is-info" 
-         on:click={ review }
+<nav class="bottombar">
+   
+      <div class="start">
+         <button 
+            class="button is-info" 
+            on:click={ review }
+            >
+            Mark for Review & Next
+         </button>
+
+
+         <button
+         class="button is-warning" 
+         on:click={ () => {
+            clear()
+            question.selected = ""
+         } }
          >
-         Mark for Review & Next
-      </button>
+         Clear Response
+         </button>
 
+      </div>
+   
+  
+      <div class="end">
+         <button class="button is-success" on:click={next} >Save & Next</button>
+      </div>
 
-      <button
-        class="button is-warning" 
-        on:click={ () => {
-           clear()
-           question.selected = ""
-        } }
-        >
-        Clear Response
-      </button>
-
-
-   </div>
-   <div class="navbar-end">
-      <button class="button is-success" on:click={next} >Save & Next</button>
-   </div>
 </nav>
 
 <style>
-   .navbar{
+   .bottombar{
+      display: flex;
       margin-right: 30px;
       margin-left: 10px;
+      justify-content: space-between;
+   }
+   .start{
+      display: flex;
+      margin-right: 30px;
+      margin-left: 10px;
+   }
+   .end{
+      display: flexbox;
+      margin-right: 10px;
+      margin-left: 30px;
+      justify-self: flex-end;
+   }
+   .button{
+      margin: 5px;
    }
 </style>
 
