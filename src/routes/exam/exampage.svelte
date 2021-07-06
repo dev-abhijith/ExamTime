@@ -68,22 +68,20 @@ function selectedOption(event){
 
 
 </script>
-
+<div class="grid-container">
 {#await getQuestionData() then questionData}
 	{#each questionData as que}
-			{#if que.sno === activeQuestion}
-        <div class="grid-container">
+			{#if que.sno === activeQuestion}       
           <div class="q-bar"> <Qbar /> </div>
           <div class="subject"><Subject activeQuestion = {activeQuestion} on:subject = {selectSubject} /></div>
           <div class="q-box"> <Question question = {que} {questionNoArray} activeQuestion = {activeQuestion} on:answer = {selectedOption} /> </div>
           <div class="q-table"> <Table activeQuestion = {activeQuestion} questionNoArray = {questionNoArray} on:notify = {selectQuestion} /> </div>  
-          <div class="selection-buttons"> <Buttons on:message={handleAction} question = {que}  /> </div>
-          <div class="submission-button"> <Submit /> </div>
-        </div>
-			{/if}
+          <div class="selection-buttons"> <Buttons on:message={handleAction} question = {que}  /> </div>                 
+			{/if}      
 	{/each}
+  <div class="submission-button"  > <Submit {questionData} /> </div>
 {/await}
-
+</div>
 
 
 <style>

@@ -1,1 +1,9 @@
-<h1>this is the result</h1>
+<script>
+    import {result} from '../api/result'
+    console.log(result.questions)
+</script>
+
+<h1> {result.score}
+    
+
+</h1>

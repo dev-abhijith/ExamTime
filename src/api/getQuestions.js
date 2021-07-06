@@ -28,14 +28,13 @@ export async function getQuestionData() {
     let optionsList = [...obj.incorrect_answers]
     optionsList.push(obj.correct_answer)
     shuffle(optionsList)
+
     const qObj = {
       sno: index + 1,
       question: obj.question,
       answer: obj.correct_answer,
       options: optionsList,
       selected: "",
-      seen: false,
-      marked: false,
     }
 
     return qObj
