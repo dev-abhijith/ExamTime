@@ -1,13 +1,13 @@
-
-<script>
+<!-- <script>
  
 let open = false
 
 </script>
 
+ 
   <div class="sidebar" class:open >
     <div class="logo-details">
-      <i class='bx bxs-vial icon'></i>
+      <i class='bx bxl-c-plus-plus icon'></i>
         <div class="logo_name">TopperLab</div>
         <i class='bx bx-menu' id="btn" on:click="{() => open = !open}" ></i>
     </div>
@@ -15,53 +15,63 @@ let open = false
 
       <li>
         <a href="/dashboard/dashboard">
-          <i class='bx bxs-grid-alt'></i>
+          <i class='bx bx-grid-alt'></i>
           <span class="links_name">Dashboard</span>
         </a>
          <span class="tooltip">Dashboard</span>
       </li>
-      
-      <li>
-       <a href="/exam/exampage">
-         <i class='bx bxs-pencil' ></i>
-         <span class="links_name">Exams</span>
-       </a>
-       <span class="tooltip">Exams</span>
-     </li>
-
       <li>
        <a href="/results/results">
-         <i class='bx bxs-bar-chart-alt-2' ></i>
-         <span class="links_name">Results</span>
-       </a>
-       <span class="tooltip">Results</span>
-     </li>
-
-     <li>
-       <a href=".">
-         <i class='bx bxs-user' ></i>
+         <i class='bx bx-user' ></i>
          <span class="links_name">User</span>
        </a>
        <span class="tooltip">User</span>
      </li>
      <li>
-       <a href=".">
-         <i class='bx bxs-book-content' ></i>
-         <span class="links_name">Learn</span>
+       <a href="/exam/exampage">
+         <i class='bx bx-chat' ></i>
+         <span class="links_name">Messages</span>
        </a>
-       <span class="tooltip">Learn</span>
+       <span class="tooltip">Messages</span>
      </li>
-
      <li>
        <a href=".">
-         <i class='bx bxs-cog' ></i>
+         <i class='bx bx-pie-chart-alt-2' ></i>
+         <span class="links_name">Analytics</span>
+       </a>
+       <span class="tooltip">Analytics</span>
+     </li>
+     <li>
+       <a href=".">
+         <i class='bx bx-folder' ></i>
+         <span class="links_name">File Manager</span>
+       </a>
+       <span class="tooltip">Files</span>
+     </li>
+     <li>
+       <a href=".">
+         <i class='bx bx-cart-alt' ></i>
+         <span class="links_name">Order</span>
+       </a>
+       <span class="tooltip">Order</span>
+     </li>
+     <li>
+       <a href=".">
+         <i class='bx bx-heart' ></i>
+         <span class="links_name">Saved</span>
+       </a>
+       <span class="tooltip">Saved</span>
+     </li>
+     <li>
+       <a href=".">
+         <i class='bx bx-cog' ></i>
          <span class="links_name">Setting</span>
        </a>
        <span class="tooltip">Setting</span>
      </li>
      <li class="profile">
          <div class="profile-details">
-           <img src="profile.jpg" alt="Img">
+           <img src="profile.jpg" alt="profileImg">
            <div class="name_job">
              <div class="name">Prem Shahi</div>
              <div class="job">Web designer</div>
@@ -73,17 +83,18 @@ let open = false
   </div>
 
 
-
+  <section class="home-section">
+      <div class="text">Dashboard</div>
+  </section>
   
 
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
   *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins" , sans-serif;
 }
 .sidebar{
   position: fixed;
@@ -178,7 +189,40 @@ let open = false
 .sidebar.open li .tooltip{
   display: none;
 }
-
+/*.sidebar input{
+  font-size: 15px;
+  color: #FFF;
+  font-weight: 400;
+  outline: none;
+  height: 50px;
+  width: 100%;
+  width: 50px;
+  border: none;
+  border-radius: 12px;
+  transition: all 0.5s ease;
+  background: #1d1b31;
+}
+ .sidebar.open input{
+  padding: 0 20px 0 50px;
+  width: 100%;
+}
+.sidebar .bx-search{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-size: 22px;
+  background: #1d1b31;
+  color: #FFF;
+}
+.sidebar.open .bx-search:hover{
+  background: #1d1b31;
+  color: #FFF;
+}
+.sidebar .bx-search:hover{
+  background: #FFF;
+  color: #11101d; 
+} */
 .sidebar li a{
   display: flex;
   height: 100%;
@@ -268,11 +312,31 @@ let open = false
   width: 50px;
   background: none;
 }
-
+.home-section{
+  position: relative;
+  background: #E4E9F7;
+  min-height: 100vh;
+  top: 0;
+  left: 78px;
+  width: calc(100% - 78px);
+  transition: all 0.5s ease;
+  z-index: 2;
+}
+.sidebar.open ~ .home-section{
+  left: 250px;
+  width: calc(100% - 250px);
+}
+.home-section .text{
+  display: inline-block;
+  color: #11101d;
+  font-size: 25px;
+  font-weight: 500;
+  margin: 18px
+}
 @media (max-width: 420px) {
   .sidebar li .tooltip{
     display: none;
   }
 }
 
-</style>
+</style> -->

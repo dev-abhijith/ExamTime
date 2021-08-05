@@ -43,7 +43,7 @@ function calculateScore(data){
       Are you sure you want to submit and view results?
     </section>
     <footer class="modal-card-foot">
-    <a href="../result" class="href" on:click={() => {result.push(questionData)}}>
+    <a href="../results/results" class="href" on:click={() => {result.push(questionData)}}>
         <button class="button is-success">
         
             Save changes and Submit
