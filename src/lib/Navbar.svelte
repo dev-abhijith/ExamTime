@@ -14,7 +14,7 @@ let open = false
     <ul class="nav-list">
 
       <li>
-        <a href="/dashboard/dashboard">
+        <a href="/">
           <i class='bx bxs-grid-alt'></i>
           <span class="links_name">Dashboard</span>
         </a>
@@ -22,7 +22,7 @@ let open = false
       </li>
       
       <li>
-       <a href="/exam/exampage">
+       <a href="/exams">
          <i class='bx bxs-pencil' ></i>
          <span class="links_name">Exams</span>
        </a>
@@ -30,7 +30,7 @@ let open = false
      </li>
 
       <li>
-       <a href="/results/results">
+       <a href="/results">
          <i class='bx bxs-bar-chart-alt-2' ></i>
          <span class="links_name">Results</span>
        </a>
@@ -38,14 +38,14 @@ let open = false
      </li>
 
      <li>
-       <a href=".">
+       <a href="/user">
          <i class='bx bxs-user' ></i>
          <span class="links_name">User</span>
        </a>
        <span class="tooltip">User</span>
      </li>
      <li>
-       <a href=".">
+       <a href="/learn/docs">
          <i class='bx bxs-book-content' ></i>
          <span class="links_name">Learn</span>
        </a>
@@ -53,7 +53,7 @@ let open = false
      </li>
 
      <li>
-       <a href=".">
+       <a href="/settings">
          <i class='bx bxs-cog' ></i>
          <span class="links_name">Setting</span>
        </a>
