@@ -26,11 +26,6 @@ let exam = {}
       flex-direction: column;
       justify-content: center;
   }
-  .topbar{
-    margin-top: 100px;
-    margin-left: 0px;
-    border-radius: 0px;
-    background-color: #1d424f;
-  }
+
 
 </style>
