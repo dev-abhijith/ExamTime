@@ -8,7 +8,7 @@ let open = false
   <div class="sidebar" class:open >
     <div class="logo-details">
       <i class='bx bxs-vial icon'></i>
-        <div class="logo_name">TopperLab</div>
+        <div class="logo_name">topperlab</div>
         <i class='bx bx-menu' id="btn" on:click="{() => open = !open}" ></i>
     </div>
     <ul class="nav-list">
@@ -59,16 +59,6 @@ let open = false
        </a>
        <span class="tooltip">Setting</span>
      </li>
-     <li class="profile">
-         <div class="profile-details">
-           <img src="profile.jpg" alt="Img">
-           <div class="name_job">
-             <div class="name">Prem Shahi</div>
-             <div class="job">Web designer</div>
-           </div>
-         </div>
-         <i class='bx bx-log-out' id="log_out" ></i>
-     </li>
     </ul>
   </div>
 
@@ -78,7 +68,7 @@ let open = false
 
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+  
   *{
   margin: 0;
   padding: 0;
@@ -88,10 +78,10 @@ let open = false
 .sidebar{
   position: fixed;
   left: 0;
-  top: 0;
+  top: 64px;
   height: 100%;
   width: 78px;
-  background: #11101D;
+  background: #E8DCCA;
   padding: 6px 14px;
   z-index: 99;
   transition: all 0.5s ease;
@@ -110,7 +100,7 @@ let open = false
   transition: all 0.5s ease;
 }
 .sidebar .logo-details .logo_name{
-  color: #fff;
+  color: #123036;
   font-size: 20px;
   font-weight: 600;
   opacity: 0;
@@ -136,7 +126,7 @@ let open = false
   text-align: right;
 }
 .sidebar i{
-  color: #fff;
+  color: #123036;
   height: 60px;
   min-width: 50px;
   font-size: 28px;
@@ -183,17 +173,17 @@ let open = false
   display: flex;
   height: 100%;
   width: 100%;
-  border-radius: 12px;
+  border-radius: 2px;
   align-items: center;
   text-decoration: none;
   transition: all 0.4s ease;
-  background: #11101D;
+  background: #fff;
 }
 .sidebar li a:hover{
-  background: #FFF;
+  background: #F2A341;
 }
 .sidebar li a .links_name{
-  color: #fff;
+  color: #123036;
   font-size: 15px;
   font-weight: 400;
   white-space: nowrap;
@@ -214,59 +204,7 @@ let open = false
   height: 50px;
   line-height: 50px;
   font-size: 18px;
-  border-radius: 12px;
-}
-.sidebar li.profile{
-  position: fixed;
-  height: 60px;
-  width: 78px;
-  left: 0;
-  bottom: -8px;
-  padding: 10px 14px;
-  background: #1d1b31;
-  transition: all 0.5s ease;
-  overflow: hidden;
-}
-.sidebar.open li.profile{
-  width: 250px;
-}
-.sidebar li .profile-details{
-  display: flex;
-  align-items: center;
-  flex-wrap: nowrap;
-}
-.sidebar li img{
-  height: 45px;
-  width: 45px;
-  object-fit: cover;
-  border-radius: 6px;
-  margin-right: 10px;
-}
-.sidebar li.profile .name,
-.sidebar li.profile .job{
-  font-size: 15px;
-  font-weight: 400;
-  color: #fff;
-  white-space: nowrap;
-}
-.sidebar li.profile .job{
-  font-size: 12px;
-}
-.sidebar .profile #log_out{
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  background: #1d1b31;
-  width: 100%;
-  height: 60px;
-  line-height: 60px;
-  border-radius: 0px;
-  transition: all 0.5s ease;
-}
-.sidebar.open .profile #log_out{
-  width: 50px;
-  background: none;
+  border-radius: 2px;
 }
 
 @media (max-width: 420px) {
