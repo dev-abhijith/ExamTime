@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "svelte-kit dev",
-    "build": "svelte-kit build",
+    "build": "svelte-kit build && svelte-kit adapt",
     "preview": "svelte-kit preview",
     "css-build": "node-sass --omit-source-map-url sass/mystyles.scss css/mystyles.css",
     "css-watch": "npm run css-build -- --watch",
@@ -12,6 +12,7 @@
   "devDependencies": {
     "@smui/drawer": "^4.2.0",
     "@smui/list": "^4.2.0",
+    "@sveltejs/adapter-static": "^1.0.0-next.16",
     "@sveltejs/kit": "next",
     "bulma": "^0.9.3",
     "node-sass": "^6.0.0",
